@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お店ページ工房 - 個人店向けサイト制作代行</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #2c2c2a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e8e7e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1D9E75;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon { font-size: 26px; }
+
+        nav a {
+            margin-left: 32px;
+            color: #5f5e5a;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: #1D9E75; }
+
+        .hero {
+            padding: 80px 0 100px;
+            text-align: center;
+            background: linear-gradient(170deg, #E1F5EE 0%, #ffffff 50%, #FFF8EC 100%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #1D9E75;
+            color: #ffffff;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+
+        h1 {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c2c2a;
+        }
+
+        h1 .accent { color: #1D9E75; }
+
+        .subtitle {
+            font-size: 20px;
+            color: #5f5e5a;
+            margin-bottom: 40px;
+        }
+
+        .hero-description {
+            max-width: 680px;
+            margin: 0 auto 48px;
+            font-size: 16px;
+            color: #5f5e5a;
+            line-height: 2;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 48px;
+            background: #1D9E75;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .cta-button:hover {
+            background: #0F6E56;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(29,158,117,0.3);
+        }
+
+        .cta-button.secondary {
+            background: #ffffff;
+            color: #1D9E75;
+            border: 2px solid #1D9E75;
+        }
+
+        .cta-button.secondary:hover {
+            background: #E1F5EE;
+            box-shadow: 0 8px 24px rgba(29,158,117,0.15);
+        }
+
+        .services {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .section-label {
+            display: block;
+            color: #1D9E75;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+            color: #2c2c2a;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #888780;
+            margin-bottom: 56px;
+            font-size: 16px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 36px 28px;
+            border-radius: 16px;
+            border: 1px solid #e8e7e0;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+            border-color: #9FE1CB;
+        }
+
+        .service-emoji {
+            width: 72px;
+            height: 72px;
+            background: #E1F5EE;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #2c2c2a;
+        }
+
+        .service-card p {
+            color: #888780;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .pricing {
+            padding: 80px 0;
+            background: #F6FBF9;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: #ffffff;
+            padding: 40px 32px;
+            border-radius: 16px;
+            border: 1px solid #e8e7e0;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #1D9E75;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1D9E75;
+            color: #ffffff;
+            padding: 4px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #2c2c2a;
+        }
+
+        .pricing-card .price {
+            font-size: 44px;
+            font-weight: 700;
+            color: #1D9E75;
+            margin: 20px 0 8px;
+        }
+
+        .pricing-card .price span {
+            font-size: 16px;
+            font-weight: 500;
+            color: #888780;
+        }
+
+        .pricing-card .price-note {
+            font-size: 14px;
+            color: #888780;
+            margin-bottom: 24px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin: 24px 0 32px;
+            padding: 0;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            font-size: 15px;
+            color: #5f5e5a;
+            border-bottom: 1px solid #f0efea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features .check {
+            color: #1D9E75;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .features {
+            padding: 80px 0;
+            background: #F6FBF9;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 16px;
+            padding: 24px;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e8e7e0;
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            border-color: #9FE1CB;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: #E1F5EE;
+            color: #1D9E75;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .feature-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #2c2c2a;
+        }
+
+        .feature-content p {
+            font-size: 14px;
+            color: #888780;
+            line-height: 1.7;
+        }
+
+        .process {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 28px 16px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #1D9E75, #5DCAA5);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+
+        .process-step h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c2c2a;
+        }
+
+        .process-step p {
+            font-size: 14px;
+            color: #888780;
+            line-height: 1.7;
+        }
+
+        @media (min-width: 769px) {
+            .process-step::after {
+                content: '';
+                position: absolute;
+                top: 44px;
+                right: -12px;
+                width: 24px;
+                height: 2px;
+                background: #9FE1CB;
+            }
+            .process-step:last-child::after { display: none; }
+        }
+
+        .portfolio {
+            padding: 80px 0;
+            background: #F6FBF9;
+        }
+
+        .portfolio-note {
+            text-align: center;
+            color: #5f5e5a;
+            font-size: 16px;
+            margin-top: 32px;
+            padding: 40px 32px;
+            background: #ffffff;
+            border-radius: 16px;
+            border: 2px dashed #9FE1CB;
+        }
+
+        .portfolio-note p { line-height: 2; }
+        .portfolio-cta { margin-top: 24px; }
+
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(170deg, #1D9E75 0%, #0F6E56 100%);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .contact .section-label { color: #9FE1CB; }
+        .contact .section-title { color: #ffffff; }
+        .contact .section-description { color: #9FE1CB; }
+
+        .contact-info {
+            max-width: 560px;
+            margin: 48px auto 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 20px 28px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon { font-size: 24px; }
+
+        .contact-note {
+            margin-top: 32px;
+            color: #9FE1CB;
+            font-size: 14px;
+        }
+
+        footer {
+            padding: 32px 0;
+            text-align: center;
+            background: #085041;
+            color: #5DCAA5;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 30px; }
+            .subtitle { font-size: 17px; }
+            nav { display: none; }
+            .service-grid, .feature-list, .process-steps, .pricing-grid { grid-template-columns: 1fr; }
+            .hero { padding: 60px 0 72px; }
+            .services, .pricing, .features, .process, .portfolio, .contact { padding: 60px 0; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🏠</span>お店ページ工房
+                </a>
+                <nav>
+                    <a href="#services">サービス</a>
+                    <a href="#pricing">料金</a>
+                    <a href="#features">特徴</a>
+                    <a href="#process">制作の流れ</a>
+                    <a href="#contact">お問い合わせ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">✨ 無料サンプル制作中！</div>
+            <h1>あなたのお店の<span class="accent">魅力</span>を<br>Webサイトで届けます</h1>
+            <p class="subtitle">個人店向け・シンプルで見やすいサイト制作代行</p>
+            <div class="hero-description">
+                <p>
+                    スマホでもパソコンでも見やすいシンプルなサイトを制作します。<br>
+                    まずは無料サンプルで仕上がりをご確認いただけます！
+                </p>
+            </div>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">無料で相談する</a>
+                <a href="#process" class="cta-button secondary">制作の流れを見る</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <p class="section-label">SERVICE</p>
+            <h2 class="section-title">サービス内容</h2>
+            <p class="section-description">お店に最適なWebサイトをご提案します</p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-emoji">🏪</div>
+                    <h3>店舗紹介ページ</h3>
+                    <p>お店のコンセプト、メニュー、営業時間などを分かりやすく掲載。お客様に安心してご来店いただけるページを作成します。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-emoji">📱</div>
+                    <h3>スマホ対応デザイン</h3>
+                    <p>スマートフォンでもパソコンでも見やすいレスポンシブデザイン。どんなデバイスからでも快適に閲覧できます。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-emoji">🎨</div>
+                    <h3>シンプルで伝わるデザイン</h3>
+                    <p>お店の魅力が一目で伝わるシンプルなデザイン。ごちゃごちゃしない、見やすいページを心がけています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <p class="section-label">PRICING</p>
+            <h2 class="section-title">料金プラン</h2>
+            <p class="section-description">シンプルでわかりやすい料金体系</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>🎁 無料サンプル</h3>
+                    <div class="price">¥0<span>（税込）</span></div>
+                    <p class="price-note">まずはお試しください</p>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span>サンプルページ1ページ制作</li>
+                        <li><span class="check">✓</span>デザインイメージの確認</li>
+                        <li><span class="check">✓</span>ヒアリング・ご相談無料</li>
+                        <li><span class="check">✓</span>お気に召さなければキャンセルOK</li>
+                    </ul>
+                    <a href="#contact" class="cta-button secondary">無料で試してみる</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">おすすめ</div>
+                    <h3>🏪 サイト制作</h3>
+                    <div class="price">¥50,000<span>（税込）</span></div>
+                    <p class="price-note">お店の魅力が伝わるサイトを制作</p>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span>オリジナルデザインのサイト制作</li>
+                        <li><span class="check">✓</span>スマホ・PC対応レスポンシブ</li>
+                        <li><span class="check">✓</span>SEO基本対策</li>
+                        <li><span class="check">✓</span>修正対応あり</li>
+                        <li><span class="check">✓</span>納品後サポート</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">相談する</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <p class="section-label">WHY CHOOSE US</p>
+            <h2 class="section-title">選ばれる理由</h2>
+            <p class="section-description">個人店オーナー様に寄り添ったサイト制作</p>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-content">
+                        <h4>手頃な価格設定</h4>
+                        <p>個人店オーナー様でも導入しやすい価格でご提供します</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎁</div>
+                    <div class="feature-content">
+                        <h4>無料サンプル提供</h4>
+                        <p>ご契約前にサンプルページで仕上がりをしっかり確認できます</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-content">
+                        <h4>スピード対応</h4>
+                        <p>お急ぎの案件にも柔軟に対応いたします</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💬</div>
+                    <div class="feature-content">
+                        <h4>丁寧なヒアリング</h4>
+                        <p>お店の魅力を最大限に引き出すため丁寧にお伺いします</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔧</div>
+                    <div class="feature-content">
+                        <h4>修正・サポート対応</h4>
+                        <p>納品後も安心のサポート体制を整えています</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-content">
+                        <h4>SEO対策</h4>
+                        <p>検索されやすいサイト構成で集客をサポートします</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="container">
+            <p class="section-label">PROCESS</p>
+            <h2 class="section-title">制作の流れ</h2>
+            <p class="section-description">かんたん5ステップで完成！</p>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>お問い合わせ</h4>
+                    <p>まずはお気軽にDMでご相談ください</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>ヒアリング</h4>
+                    <p>お店のコンセプトやご希望を詳しくお伺いします</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>サンプル作成</h4>
+                    <p>無料でサンプルページをお作りします</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>本制作・修正</h4>
+                    <p>ご契約後、本格的に制作を進めます</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h4>納品・公開</h4>
+                    <p>完成サイトを納品。公開もサポート！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <p class="section-label">WORKS</p>
+            <h2 class="section-title">制作実績</h2>
+            <p class="section-description">これまでの制作事例</p>
+            <div class="portfolio-note">
+                <p>
+                    🚀 ただいま制作実績を準備中です！<br>
+                    お客様のお店の魅力を最大限に引き出すサイトを制作いたします。<br>
+                    まずは無料サンプルでクオリティをご確認ください！
+                </p>
+                <div class="portfolio-cta">
+                    <a href="#contact" class="cta-button">無料サンプルを依頼する</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <p class="section-label">CONTACT</p>
+            <h2 class="section-title">お問い合わせ</h2>
+            <p class="section-description">無料相談受付中！お気軽にご連絡ください</p>
+            <div class="contact-info">
+                <a href="https://instagram.com/website_daikou" class="contact-item" target="_blank" rel="noopener">
+                    <span class="contact-icon">📷</span>
+                    <span>Instagram: @website_daikou</span>
+                </a>
+                <div class="contact-item">
+                    <span class="contact-icon">💬</span>
+                    <span>InstagramのDMにてお気軽にどうぞ！</span>
+                </div>
+            </div>
+            <p class="contact-note">※ 24時間以内にお返事いたします</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 お店ページ工房. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
