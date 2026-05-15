@@ -38,7 +38,7 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #F5EDE4 0%, #E8DDD0 100%);
+            background: linear-gradient(rgba(245, 237, 228, 0.9), rgba(232, 221, 208, 0.9)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80') center/cover;
             padding: 100px 0;
             text-align: center;
         }
@@ -84,6 +84,14 @@
             padding: 24px;
             border-radius: 12px;
             border: 1px solid #e8e7e0;
+        }
+
+        .menu-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 16px;
         }
 
         .menu-item h3 {
@@ -163,21 +171,25 @@
             <h2 class="section-title">メニュー</h2>
             <div class="menu-grid">
                 <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="ブレンドコーヒー" class="menu-image">
                     <h3>ブレンドコーヒー</h3>
                     <p>厳選豆を丁寧に焙煎した当店自慢の一杯</p>
                     <div class="price">¥450</div>
                 </div>
                 <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80" alt="カフェラテ" class="menu-image">
                     <h3>カフェラテ</h3>
                     <p>なめらかなミルクとエスプレッソの絶妙なバランス</p>
                     <div class="price">¥550</div>
                 </div>
                 <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1533134486753-c833f0ed4866?w=600&q=80" alt="チーズケーキ" class="menu-image">
                     <h3>自家製チーズケーキ</h3>
                     <p>濃厚でなめらかな口当たりが人気のデザート</p>
                     <div class="price">¥600</div>
                 </div>
                 <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80" alt="ランチプレート" class="menu-image">
                     <h3>本日のランチプレート</h3>
                     <p>季節の食材を使った日替わりプレート</p>
                     <div class="price">¥980</div>
