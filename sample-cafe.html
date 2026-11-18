@@ -1,242 +1,306 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Lumière - 光溢れるカフェ</title>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HR25S9D2RH"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-HR25S9D2RH');
-    </script>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>珈琲と焼き菓子 こもれび｜お店ページ工房のサンプル</title>
+<meta name="description" content="自家焙煎の珈琲と手づくりの焼き菓子の店（架空）。営業中の表示、今日のケーキ、テイクアウトの流れ、混みやすい時間がわかるサンプルページ。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="珈琲と焼き菓子 こもれび｜お店ページ工房のサンプル">
+<meta property="og:description" content="自家焙煎の珈琲と手づくりの焼き菓子の店（架空）。営業中の表示、今日のケーキ、テイクアウトの流れ、混みやすい時間がわかるサンプルページ。">
+<meta property="og:url" content="https://omise-page-koubou.pages.dev/sample-cafe.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#8a5a2b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2064%2064%27%3E%3Crect%20width=%2764%27%20height=%2764%27%20rx=%2714%27%20fill=%27%238a5a2b%27/%3E%3Ctext%20x=%2732%27%20y=%2744%27%20font-size=%2734%27%20text-anchor=%27middle%27%20fill=%27white%27%20font-family=%27sans-serif%27%20font-weight=%27700%27%3Eこ%3C/text%3E%3C/svg%3E">
+<style>
+:root{--main:#8a5a2b;--accent:#b07a3c;--ink:#2f2a24;--sub:#6f675c;--bg:#faf6ef;--card:#ffffff;--soft:#f3eadc;--line:#e6dccb;--ph1:#efe6d6;--ph2:#e8dcc8;--hero:linear-gradient(135deg,#6b4423,#a2703d);--head:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;--_extra:
+.cake{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:center}
+.cake img{border-radius:14px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.cake ul{list-style:none;padding:0;margin:0}
+.cake li{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.cake li.sold{color:#a7a093}.cake li.sold .pr::after{content:" 売り切れ";color:#a32d2d;font-size:12px;margin-left:4px}
+.cake .pr{font-weight:700;color:var(--main);white-space:nowrap}
+@media (max-width:800px){.cake{grid-template-columns:1fr}}
+.crowd{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.bars{display:flex;align-items:flex-end;gap:6px;height:150px;margin-top:10px}
+.bars div{flex:1;background:var(--soft);border-radius:6px 6px 0 0;position:relative}
+.bars div.hi{background:var(--accent)}
+.bars div.now{outline:2px solid #2f2a24;outline-offset:1px}
+.bl{display:flex;gap:6px;font-size:11px;color:var(--sub);margin-top:6px}.bl span{flex:1;text-align:center}
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.feat div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;font-size:14px}
+.feat b{display:block;font-size:20px}
+@media (max-width:760px){.feat{grid-template-columns:repeat(2,1fr)}}
+;}
 
-        body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.8;
-            color: #2c2c2a;
-            background: #fafaf8;
-        }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Meiryo","Noto Sans JP",sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;font-size:16px;padding-bottom:76px}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--main)}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.45;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.sband{background:#2c2c2a;color:#fff;font-size:13px;text-align:center;padding:8px 12px;line-height:1.6}
+.sband a{color:#9fe1cb;font-weight:700}
+header.site{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:62px}
+.logo{text-decoration:none;color:var(--ink);line-height:1.25}
+.logo small{display:block;font-size:11px;color:var(--sub);letter-spacing:.12em}
+.logo span{font-family:var(--head);font-size:19px;font-weight:700;letter-spacing:.04em}
+nav.gnav ul{list-style:none;margin:0;padding:0;display:flex;gap:2px}
+nav.gnav a{display:block;padding:8px 12px;text-decoration:none;color:var(--ink);font-size:14px;border-radius:8px}
+nav.gnav a:hover{background:var(--soft)}
+.navbtn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font:inherit;font-size:14px;color:var(--ink);cursor:pointer}
+@media (max-width:860px){
+ .navbtn{display:block}
+ nav.gnav{position:absolute;top:100%;left:0;right:0;background:var(--card);border-bottom:1px solid var(--line);display:none}
+ nav.gnav.open{display:block}
+ nav.gnav ul{flex-direction:column;padding:6px 14px 12px}
+ nav.gnav a{padding:12px 6px;border-bottom:1px solid var(--line);border-radius:0}
+}
+.hero{position:relative;overflow:hidden;color:#fff;background:var(--hero)}
+.hero .in{position:relative;max-width:1080px;margin:0 auto;padding:84px 20px 84px}
+.hero .en{letter-spacing:.3em;font-size:13px;opacity:.85;margin:0 0 8px}
+.hero h1{font-size:clamp(28px,5vw,46px);letter-spacing:.04em}
+.hero p.lead{font-size:clamp(15px,2.2vw,18px);margin:16px 0 0;max-width:32em;opacity:.95}
+.hero .ph{position:absolute;right:14px;top:12px;font-size:12px;opacity:.75}
+.hero .deco{position:absolute;right:-40px;bottom:-60px;width:360px;height:360px;opacity:.18}
+.status{margin:-34px auto 0;position:relative;z-index:2}
+.status .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;grid-template-columns:1fr 1fr;gap:14px;box-shadow:0 6px 22px rgba(0,0,0,.07)}
+.status .box{display:flex;gap:12px;align-items:flex-start}
+.badge{flex:none;font-size:13px;font-weight:700;padding:4px 10px;border-radius:99px;background:#eee;color:#555;white-space:nowrap}
+.badge.open{background:#e1f5ee;color:#0f6e56}.badge.close{background:#fcebeb;color:#a32d2d}.badge.soon{background:#faeeda;color:#854f0b}
+.status .t{font-weight:700}.status .s{font-size:14px;color:var(--sub)}
+@media (max-width:700px){.status .card{grid-template-columns:1fr}}
+section{padding:62px 0;scroll-margin-top:64px}
+section.alt{background:var(--card)}
+.sec-h{text-align:center;margin-bottom:30px}
+.sec-h .en{color:var(--accent);letter-spacing:.22em;font-size:12px;font-weight:700;display:block}
+.sec-h h2{font-size:clamp(22px,3.4vw,30px);margin-top:4px}
+.sec-h p{color:var(--sub);margin:8px auto 0;max-width:40em;font-size:15px}
+.news{max-width:780px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.news h3{font-size:16px;padding:12px 18px;background:var(--soft);display:flex;justify-content:space-between;gap:10px}
+.news h3 small{font-weight:400;font-size:12px;color:var(--sub)}
+.news ul{list-style:none;margin:0;padding:4px 18px 12px}
+.news li{padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.news li:last-child{border-bottom:0}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:4px;background:var(--main);color:#fff;margin-right:6px;vertical-align:2px}
+.tag.r{background:#d85a30}
+.photo{background:repeating-linear-gradient(135deg,var(--ph1) 0 18px,var(--ph2) 18px 36px);border-radius:12px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:13px;text-align:center;padding:10px}
+.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:15px;padding:8px 18px;border-radius:99px;border:1px solid var(--main);background:var(--card);color:var(--main);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--main);color:#fff}
+.mlist{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 20px}
+.mlist .it{display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.mlist .it:last-child{border-bottom:0}
+.mlist .it b{display:block}
+.mlist .it small{color:var(--sub);font-size:13px;display:block}
+.mlist .it .pr{white-space:nowrap;font-weight:700;color:var(--main)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:st}
+.steps div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;position:relative}
+.steps div::before{counter-increment:st;content:counter(st);display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--main);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-bottom:8px}
+.steps b{display:block;margin-bottom:4px}
+.steps span{font-size:14px;color:var(--sub)}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+.f{margin-bottom:14px}
+.f label,.f .lb{display:block;font-weight:700;font-size:14px;margin-bottom:5px}
+.req,.opt{font-size:11px;font-weight:700;padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:1px}
+.req{background:#d85a30;color:#fff}.opt{background:#e8e6df;color:#5f5e5a}
+.hint{font-size:12px;color:var(--sub);font-weight:400;margin-top:4px;display:block}
+.f input[type=date],.f input[type=number],.f input[type=text],.f input[type=email],.f input[type=tel],.f select,.f textarea{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid #cfcbc0;border-radius:8px;background:#fff;color:var(--ink)}
+.f textarea{min-height:72px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.row2{grid-template-columns:1fr}}
+.chk{display:flex;flex-wrap:wrap;gap:8px 14px}
+.chk label{font-weight:400;display:flex;align-items:center;gap:6px;margin:0;font-size:15px}
+.chk input{width:18px;height:18px}
+.err{color:#a32d2d;font-size:13px;margin-top:4px;display:none}.err.on{display:block}
+.warn{background:#faeeda;color:#633806;border-radius:8px;padding:10px 12px;font-size:14px;margin:0 0 12px;display:none}.warn.on{display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:700;font-size:16px;padding:12px 22px;border-radius:10px;border:0;cursor:pointer;text-decoration:none}
+.btn.p{background:var(--main);color:#fff}.btn.s{background:var(--card);color:var(--main);border:1px solid var(--main)}
+.out{display:none;margin-top:16px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px}.out.on{display:block}
+.out pre{white-space:pre-wrap;font-family:inherit;font-size:15px;margin:0 0 12px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.info table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card);border:1px solid var(--line)}
+.info th,.info td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.info th{width:7em;background:var(--soft);font-size:14px}
+.map{background:var(--soft);border:1px solid var(--line);border-radius:12px;min-height:220px;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:14px;text-align:center;padding:16px}
+@media (max-width:860px){.info{grid-template-columns:1fr}}
+footer{background:#2c2c2a;color:#d3d1c7;padding:30px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+footer a{color:#9fe1cb}
+.fixbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,255,255,.97);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px 8px calc(8px + env(safe-area-inset-bottom))}
+.fixbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;font-size:12px;color:var(--main);font-weight:700;padding:6px 0;border-radius:10px;line-height:1.3}
+.fixbar a.pri{background:var(--main);color:#fff}
+.fixbar svg{width:20px;height:20px;margin-bottom:2px}
+@media (min-width:1000px){.fixbar{left:auto;right:20px;bottom:20px;width:380px;border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 26px rgba(0,0,0,.12)}body{padding-bottom:0}}
+@media (min-width:1600px){body{font-size:17px}.wrap,.hero .in{max-width:1200px}}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(20px);background:#2c2c2a;color:#fff;font-size:14px;padding:10px 16px;border-radius:10px;opacity:0;pointer-events:none;transition:.25s;z-index:60;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
 
-        header {
-            background: #ffffff;
-            padding: 20px 0;
-            border-bottom: 1px solid #e8e7e0;
-        }
+.cake{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:center}
+.cake img{border-radius:14px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.cake ul{list-style:none;padding:0;margin:0}
+.cake li{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.cake li.sold{color:#a7a093}.cake li.sold .pr::after{content:" 売り切れ";color:#a32d2d;font-size:12px;margin-left:4px}
+.cake .pr{font-weight:700;color:var(--main);white-space:nowrap}
+@media (max-width:800px){.cake{grid-template-columns:1fr}}
+.crowd{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.bars{display:flex;align-items:flex-end;gap:6px;height:150px;margin-top:10px}
+.bars div{flex:1;background:var(--soft);border-radius:6px 6px 0 0;position:relative}
+.bars div.hi{background:var(--accent)}
+.bars div.now{outline:2px solid #2f2a24;outline-offset:1px}
+.bl{display:flex;gap:6px;font-size:11px;color:var(--sub);margin-top:6px}.bl span{flex:1;text-align:center}
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.feat div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;font-size:14px}
+.feat b{display:block;font-size:20px}
+@media (max-width:760px){.feat{grid-template-columns:repeat(2,1fr)}}
 
-        .logo {
-            font-size: 24px;
-            font-weight: 600;
-            color: #8B7355;
-            text-align: center;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(245, 237, 228, 0.9), rgba(232, 221, 208, 0.9)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80') center/cover;
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 42px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: #2c2c2a;
-        }
-
-        .subtitle {
-            font-size: 18px;
-            color: #5f5e5a;
-            margin-bottom: 40px;
-        }
-
-        .section {
-            padding: 80px 0;
-            background: #ffffff;
-        }
-
-        .section:nth-child(even) {
-            background: #fafaf8;
-        }
-
-        .section-title {
-            font-size: 32px;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 48px;
-            color: #2c2c2a;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-        }
-
-        .menu-item {
-            background: #ffffff;
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px solid #e8e7e0;
-        }
-
-        .menu-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 16px;
-        }
-
-        .menu-item h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #8B7355;
-        }
-
-        .menu-item p {
-            font-size: 14px;
-            color: #888780;
-            margin-bottom: 12px;
-        }
-
-        .price {
-            font-size: 18px;
-            font-weight: 600;
-            color: #2c2c2a;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-        }
-
-        .info-card {
-            padding: 24px;
-            background: #F5EDE4;
-            border-radius: 12px;
-        }
-
-        .info-card h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #8B7355;
-        }
-
-        .info-card p {
-            font-size: 15px;
-            color: #5f5e5a;
-        }
-
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            background: #2c2c2a;
-            color: #888780;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 32px; }
-            .hero { padding: 60px 0; }
-            .section { padding: 60px 0; }
-        }
-    </style>
+</style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">☕ Cafe Lumière</div>
-        </div>
-    </header>
+<div class="sband">これは<a href="https://omise-page-koubou.pages.dev/">お店ページ工房</a>のサンプルです（架空のお店です。電話・地図・送信は動きません）</div>
+<header class="site"><div class="wrap">
+<a class="logo" href="#top"><small>COFFEE &amp; BAKE</small><span>珈琲と焼き菓子 こもれび</span></a>
+<button class="navbtn" type="button" aria-expanded="false" aria-controls="gnav">メニュー</button>
+<nav class="gnav" id="gnav" aria-label="ページ内メニュー"><ul><li><a href="#news">お知らせ</a></li><li><a href="#cake">今日のケーキ</a></li><li><a href="#menu">メニュー</a></li><li><a href="#takeout">テイクアウト</a></li><li><a href="#crowd">混雑</a></li><li><a href="#access">アクセス</a></li></ul></nav>
+</div></header>
+<main id="top">
+<div class="hero"><span class="ph">写真：店内の写真に差し替え</span>
+<svg class="deco" viewBox="0 0 100 100" aria-hidden="true"><path d="M20 40h50v18a22 22 0 0 1-22 22h-6a22 22 0 0 1-22-22z" fill="#fff"/><path d="M70 46h6a8 8 0 0 1 0 16h-6" stroke="#fff" stroke-width="5" fill="none"/><path d="M34 14c-4 6 4 10 0 18M46 10c-4 6 4 10 0 18M58 14c-4 6 4 10 0 18" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+<div class="in"><p class="en">COFFEE &amp; BAKE</p><h1>珈琲と焼き菓子<br>こもれび</h1><p class="lead">毎朝焼く焼き菓子と、店で焙煎する珈琲。窓ぎわの席で、ゆっくりどうぞ。</p></div></div>
+<div class="wrap status"><div class="card" aria-live="polite"><div class="box"><span class="badge" id="b1">確認中</span><div><div class="t" id="t1">本日の営業</div><div class="s" id="s1"></div></div></div>
+<div class="box"><span class="badge" id="b2">確認中</span><div><div class="t" id="t2"></div><div class="s" id="s2"></div></div></div></div></div>
 
-    <section class="hero">
-        <div class="container">
-            <h1>光溢れるカフェ</h1>
-            <p class="subtitle">ゆったりとした時間を過ごせる空間</p>
-        </div>
-    </section>
+<section id="news"><div class="wrap">
+<div class="sec-h"><span class="en">NEWS</span><h2>お知らせ</h2></div>
+<div class="news"><h3>お知らせ <small>お店の方が書き換えやすい欄です</small></h3><ul>
+<li><span class="tag r">限定</span>栗のタルトは11月末までの季節限定です。</li>
+<li><span class="tag">営業</span>12月29日〜1月3日はお休みをいただきます。</li>
+<li><span class="tag">豆</span>今月のおすすめ豆は「エチオピア 浅煎り」。100gから量り売りします。</li>
+</ul></div>
+</div></section>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">メニュー</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="ブレンドコーヒー" class="menu-image">
-                    <h3>ブレンドコーヒー</h3>
-                    <p>厳選豆を丁寧に焙煎した当店自慢の一杯</p>
-                    <div class="price">¥450</div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80" alt="カフェラテ" class="menu-image">
-                    <h3>カフェラテ</h3>
-                    <p>なめらかなミルクとエスプレッソの絶妙なバランス</p>
-                    <div class="price">¥550</div>
-                </div>
-                <div class="menu-item">
-                    <img src="cheesecake.jpg" alt="チーズケーキ" class="menu-image">
-                    <h3>自家製チーズケーキ</h3>
-                    <p>濃厚でなめらかな口当たりが人気のデザート</p>
-                    <div class="price">¥600</div>
-                </div>
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80" alt="ランチプレート" class="menu-image">
-                    <h3>本日のランチプレート</h3>
-                    <p>季節の食材を使った日替わりプレート</p>
-                    <div class="price">¥980</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="alt" id="cake"><div class="wrap">
+<div class="sec-h"><span class="en">TODAY'S CAKE</span><h2>今日のケーキ</h2><p>売り切れたら、お店の方がスマホから「売り切れ」に切り替えられます。</p></div>
+<div class="cake">
+<img src="cheesecake.jpg" alt="自家製のチーズケーキ" width="800" height="600" loading="lazy">
+<ul>
+<li><span>ベイクドチーズケーキ</span><span class="pr">520円</span></li>
+<li><span>栗のタルト（季節限定）</span><span class="pr">620円</span></li>
+<li class="sold"><span>ガトーショコラ</span><span class="pr">500円</span></li>
+<li><span>りんごのパウンドケーキ</span><span class="pr">450円</span></li>
+</ul></div>
+</div></section>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">店舗情報</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>📍 住所</h3>
-                    <p>東京都渋谷区○○ 1-2-3<br>△△ビル 1F</p>
-                </div>
-                <div class="info-card">
-                    <h3>🕒 営業時間</h3>
-                    <p>平日: 8:00 - 20:00<br>土日祝: 9:00 - 19:00<br>定休日: 火曜日</p>
-                </div>
-                <div class="info-card">
-                    <h3>📞 電話番号</h3>
-                    <p>03-1234-5678</p>
-                </div>
-                <div class="info-card">
-                    <h3>🅿️ アクセス</h3>
-                    <p>○○駅から徒歩3分<br>駐車場なし（近隣にコインパーキングあり）</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="menu"><div class="wrap">
+<div class="sec-h"><span class="en">MENU</span><h2>メニュー</h2><p>価格はすべて税込です。</p></div>
+<div class="tabs" role="tablist" data-group="m">
+<button type="button" role="tab" aria-selected="true" data-f="all">すべて</button>
+<button type="button" role="tab" aria-selected="false" data-f="morning">モーニング</button>
+<button type="button" role="tab" aria-selected="false" data-f="drink">ドリンク</button>
+<button type="button" role="tab" aria-selected="false" data-f="food">フード</button>
+</div>
+<div class="mlist">
+<div class="it" data-m="morning"><div><b>トーストセット</b><small>厚切りトースト・ゆで卵・サラダ・ドリンク（10:30まで）</small></div><span class="pr">680円</span></div>
+<div class="it" data-m="drink"><div><b>こもれびブレンド</b><small>店で焙煎した中深煎り</small></div><span class="pr">500円</span></div>
+<div class="it" data-m="drink"><div><b>カフェオレ</b><small>ホット／アイス</small></div><span class="pr">580円</span></div>
+<div class="it" data-m="drink"><div><b>ほうじ茶ラテ</b><small>甘さひかえめ</small></div><span class="pr">580円</span></div>
+<div class="it" data-m="food"><div><b>キッシュプレート</b><small>日替わりキッシュ・スープ・サラダ（11:30〜）</small></div><span class="pr">1,100円</span></div>
+<div class="it" data-m="food"><div><b>たまごサンド</b><small>ふわふわの卵焼きをはさんで</small></div><span class="pr">780円</span></div>
+</div>
+</div></section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Cafe Lumière. All rights reserved.</p>
-            <p style="margin-top: 8px; font-size: 12px;">※ このサイトは「お店ページ工房」のサンプルです</p>
-        </div>
-    </footer>
+<section class="alt" id="takeout"><div class="wrap">
+<div class="sec-h"><span class="en">TAKE OUT</span><h2>焼き菓子・珈琲豆のお持ち帰り</h2><p>電話で取り置きしておけば、待たずに受け取れます。</p></div>
+<div class="steps">
+<div><b>お電話で注文</b><span>ほしいものと数、受け取りの時間を伝えてください（前日まで）。</span></div>
+<div><b>お店で用意</b><span>焼き上がりに合わせて、箱に詰めておきます。</span></div>
+<div><b>受け取り・お支払い</b><span>レジでお名前を伝えてください。現金・カード・QR決済が使えます。</span></div>
+</div>
+</div></section>
+
+<section id="crowd"><div class="wrap">
+<div class="sec-h"><span class="en">CROWD</span><h2>混みやすい時間</h2><p>ゆっくり過ごしたい方は、すいている時間がおすすめです。</p></div>
+<div class="crowd">
+<div class="tabs" role="tablist" data-group="c" style="margin-bottom:6px">
+<button type="button" role="tab" aria-selected="true" data-f="wd">平日</button>
+<button type="button" role="tab" aria-selected="false" data-f="we">土日祝</button></div>
+<div data-c="wd"><div class="bars" id="bars-wd"></div></div>
+<div data-c="we" hidden><div class="bars" id="bars-we"></div></div>
+<div class="bl"><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span></div>
+<p style="font-size:13px;color:var(--sub);margin:10px 0 0">色の濃い時間が混みやすい時間です。枠で囲んだのがいまの時間です。</p>
+</div>
+<div class="feat"><div><b>18席</b>テーブル・カウンター</div><div><b>Wi-Fi</b>無料で使えます</div><div><b>電源</b>カウンター席</div><div><b>テラス</b>ワンちゃんOK</div></div>
+</div></section>
+
+<section class="alt" id="access"><div class="wrap">
+<div class="sec-h"><span class="en">ACCESS</span><h2>営業時間・アクセス</h2></div>
+<div class="info"><table>
+<tr><th>営業時間</th><td>平日 8:00〜18:00<br>土日祝 9:00〜18:00<br><small>（ラストオーダー 17:30）</small></td></tr>
+<tr><th>定休日</th><td>水曜日</td></tr>
+<tr><th>住所</th><td>○○県○○市○○町1-2-3</td></tr>
+<tr><th>電話</th><td>000-000-0000</td></tr>
+<tr><th>お支払い</th><td>現金・クレジットカード・QR決済</td></tr>
+</table>
+<div class="map">ここに地図が入ります<br>（Googleマップで開くボタンもつけられます）</div></div>
+</div></section>
+
+</main>
+<footer><div class="wrap"><div>珈琲と焼き菓子 こもれび（架空のお店）</div><div><a href="https://omise-page-koubou.pages.dev/">お店ページ工房</a>のサンプルページ</div></div></footer>
+<div class="fixbar"><a class="pri" href="#" data-demo="サンプルのため電話はかかりません"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>電話する</a><a href="#takeout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>お持ち帰り</a><a href="#" data-demo="サンプルのため地図は開きません"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>地図</a></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+
+function tokyoNow(){return new Date(new Date().toLocaleString("en-US",{timeZone:"Asia/Tokyo"}));}
+function ymd(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function nth(d){return Math.floor((d.getDate()-1)/7)+1;}
+function setB(id,cls,txt){var b=document.getElementById(id);b.className="badge "+cls;b.textContent=txt;}
+function txt(id,t){document.getElementById(id).textContent=t;}
+var toastT;function toast(m){var t=document.getElementById("toast");t.textContent=m;t.classList.add("on");clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove("on");},2600);}
+(function(){
+ var nb=document.querySelector(".navbtn"),gn=document.getElementById("gnav");
+ nb.addEventListener("click",function(){var o=gn.classList.toggle("open");nb.setAttribute("aria-expanded",o);nb.textContent=o?"閉じる":"メニュー";});
+ gn.addEventListener("click",function(e){if(e.target.tagName==="A"){gn.classList.remove("open");nb.setAttribute("aria-expanded","false");nb.textContent="メニュー";}});
+ document.querySelectorAll("[data-demo]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();toast(a.getAttribute("data-demo"));});});
+ document.querySelectorAll(".tabs").forEach(function(tb){
+  var bs=tb.querySelectorAll("button");
+  bs.forEach(function(b){b.addEventListener("click",function(){
+   bs.forEach(function(x){x.setAttribute("aria-selected","false");});b.setAttribute("aria-selected","true");
+   var g=tb.getAttribute("data-group");
+   document.querySelectorAll("[data-"+g+"]").forEach(function(el){el.hidden=!(b.dataset.f==="all"||el.getAttribute("data-"+g)===b.dataset.f);});
+  });});
+ });
+})();
+
+
+(function(){
+ function st(){
+  var n=tokyoNow(),d=n.getDay(),m=n.getHours()*60+n.getMinutes(),we=(d===0||d===6),op=we?540:480,cl=1080;
+  if(d===3){setB("b1","close","本日定休");txt("t1","水曜日は定休日です");txt("s1","明日のご来店をお待ちしています");}
+  else if(m>=op&&m<1050){setB("b1","open","営業中");txt("t1","ただいま営業中");txt("s1","18:00まで（L.O.17:30）");}
+  else if(m>=1050&&m<cl){setB("b1","soon","まもなく閉店");txt("t1","ラストオーダーは終了しました");txt("s1","18:00閉店");}
+  else if(m<op){setB("b1","soon","準備中");txt("t1",(we?"9:00":"8:00")+"から営業します");txt("s1","本日は18:00まで");}
+  else{setB("b1","close","営業終了");txt("t1","本日の営業は終了しました");txt("s1","またのお越しをお待ちしています");}
+  if(d===3||m>=cl){setB("b2","close","—");txt("t2","モーニングは明日の朝から");txt("s2","トーストセットは10:30まで");}
+  else if(m<630&&m>=op){setB("b2","open","提供中");txt("t2","モーニング提供中");txt("s2","トーストセット 680円（10:30まで）");}
+  else if(m<op){setB("b2","soon","このあと");txt("t2","モーニングは開店から10:30まで");txt("s2","トーストセット 680円");}
+  else{setB("b2","open","提供中");txt("t2","ランチ・ケーキ提供中");txt("s2","キッシュプレートは11:30から");}
+  draw(n,m,we,d);
+ }
+ var WD=[2,4,3,2,5,5,3,4,3,2],WE=[0,2,4,5,5,5,5,4,3,2];
+ function draw(n,m,we,d){
+  [["bars-wd",WD,false],["bars-we",WE,true]].forEach(function(a){
+   var el=document.getElementById(a[0]);el.innerHTML="";
+   a[1].forEach(function(v,i){var b=document.createElement("div");b.style.height=Math.max(8,v*20)+"%";if(v>=4)b.className="hi";
+    if(d!==3&&a[2]===we&&Math.floor(m/60)===8+i)b.classList.add("now");el.appendChild(b);});
+  });
+ }
+ st();setInterval(st,60000);
+})();
+
+</script>
 </body>
 </html>
